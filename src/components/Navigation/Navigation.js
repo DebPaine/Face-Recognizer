@@ -3,7 +3,7 @@ import React from 'react';
 const Navigation = () => {
 	return (
 		<nav className="flex justify-end">
-			<p className="underline pa3 f4 link dim pointer black">Sign Out</p>
+			<p className="underline pa3 f4 link dim pointer black font3">Sign Out</p>
 		</nav>
 	);
 };
