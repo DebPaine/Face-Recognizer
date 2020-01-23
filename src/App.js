@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Navigation from './components/Navigation';
+import Navigation from './components/Navigation/Navigation';
 import './App.css';
 
 class App extends Component {
@@ -7,8 +7,8 @@ class App extends Component {
 		return (
 			<div className="App">
 				<Navigation />
-				{/* <Logo />
-				<ImageLinkForm />
+				<Logo />
+				{/* <ImageLinkForm />
 				<FaceRecognizer /> */}
 			</div>
 		);
