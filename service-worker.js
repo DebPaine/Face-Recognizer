@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "//debpaine.github.io/Face-Recognizer/./precache-manifest.32ec72b13ebaf1b7c8d9098cf3805cfd.js"
+  "//debpaine.github.io/Face-Recognizer/./precache-manifest.f9f920ce8cfe2810eedc60de60e5072c.js"
 );
 
 self.addEventListener('message', (event) => {
