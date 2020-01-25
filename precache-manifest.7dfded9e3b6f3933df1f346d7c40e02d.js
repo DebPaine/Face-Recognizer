@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6e51881762368360fd22abd048dbc9c6",
+    "revision": "52ac81a4fdf4ca75ebf90e2f6888356a",
     "url": "//debpaine.github.io/Face-Recognizer/./index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "//debpaine.github.io/Face-Recognizer/./static/css/2.3497f09c.chunk.css"
   },
   {
-    "revision": "c52511a8c7961efb5eac",
+    "revision": "5b1e36c55bbf58e6ef86",
     "url": "//debpaine.github.io/Face-Recognizer/./static/css/main.2def1995.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "//debpaine.github.io/Face-Recognizer/./static/js/2.7c3e70bb.chunk.js.LICENSE"
   },
   {
-    "revision": "c52511a8c7961efb5eac",
-    "url": "//debpaine.github.io/Face-Recognizer/./static/js/main.6dde518a.chunk.js"
+    "revision": "5b1e36c55bbf58e6ef86",
+    "url": "//debpaine.github.io/Face-Recognizer/./static/js/main.e67d178d.chunk.js"
   },
   {
     "revision": "d045549cf8106885ebd0",
