@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "//debpaine.github.io/Face-Recognizer/./static/css/main.2def1995.chunk.css",
-    "main.js": "//debpaine.github.io/Face-Recognizer/./static/js/main.e67d178d.chunk.js",
-    "main.js.map": "//debpaine.github.io/Face-Recognizer/./static/js/main.e67d178d.chunk.js.map",
+    "main.js": "//debpaine.github.io/Face-Recognizer/./static/js/main.68315f26.chunk.js",
+    "main.js.map": "//debpaine.github.io/Face-Recognizer/./static/js/main.68315f26.chunk.js.map",
     "runtime-main.js": "//debpaine.github.io/Face-Recognizer/./static/js/runtime-main.7bd0f4b0.js",
     "runtime-main.js.map": "//debpaine.github.io/Face-Recognizer/./static/js/runtime-main.7bd0f4b0.js.map",
     "static/css/2.3497f09c.chunk.css": "//debpaine.github.io/Face-Recognizer/./static/css/2.3497f09c.chunk.css",
     "static/js/2.7c3e70bb.chunk.js": "//debpaine.github.io/Face-Recognizer/./static/js/2.7c3e70bb.chunk.js",
     "static/js/2.7c3e70bb.chunk.js.map": "//debpaine.github.io/Face-Recognizer/./static/js/2.7c3e70bb.chunk.js.map",
     "index.html": "//debpaine.github.io/Face-Recognizer/./index.html",
-    "precache-manifest.badc63ef9b4e7cead7804e73f9d80595.js": "//debpaine.github.io/Face-Recognizer/./precache-manifest.badc63ef9b4e7cead7804e73f9d80595.js",
+    "precache-manifest.32ec72b13ebaf1b7c8d9098cf3805cfd.js": "//debpaine.github.io/Face-Recognizer/./precache-manifest.32ec72b13ebaf1b7c8d9098cf3805cfd.js",
     "service-worker.js": "//debpaine.github.io/Face-Recognizer/./service-worker.js",
     "static/css/2.3497f09c.chunk.css.map": "//debpaine.github.io/Face-Recognizer/./static/css/2.3497f09c.chunk.css.map",
     "static/css/main.2def1995.chunk.css.map": "//debpaine.github.io/Face-Recognizer/./static/css/main.2def1995.chunk.css.map",
@@ -21,6 +21,6 @@
     "static/css/2.3497f09c.chunk.css",
     "static/js/2.7c3e70bb.chunk.js",
     "static/css/main.2def1995.chunk.css",
-    "static/js/main.e67d178d.chunk.js"
+    "static/js/main.68315f26.chunk.js"
   ]
 }
