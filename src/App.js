@@ -32,7 +32,7 @@ class App extends Component {
 		super();
 		this.state = {
 			imageUrl: '',
-			box: {}
+			boxes: []
 		};
 	}
 
@@ -44,26 +44,32 @@ class App extends Component {
 		app.models
 			.predict(Clarifai.FACE_DETECT_MODEL, this.state.imageUrl)
 			.then((response) => {
-				const boxLocation = response.outputs[0].data.regions[0].region_info.bounding_box;
-				console.log(boxLocation);
-				this.calculateFaceLocation(boxLocation);
+				// console.log(response);
+				const multipleBoxes = response.outputs[0].data.regions.map((obj) => obj.region_info.bounding_box);
+				// console.log(multipleBoxes);
+				this.calculateFaceLocation(multipleBoxes);
 			})
 			.catch((error) => console.log(error));
 	};
 
-	calculateFaceLocation = (data) => {
+	calculateFaceLocation = (boxes) => {
+		console.log(boxes);
 		const image = document.getElementById('inputImage');
 		const width = image.width;
 		const height = image.height;
-		const bounding_box = {
-			leftCol: data.left_col * width,
-			rightCol: width - data.right_col * width,
-			bottomRow: height - data.bottom_row * height,
-			topRow: data.top_row * height
-		};
-		this.setState({ box: bounding_box });
-		console.log(bounding_box);
-		console.log(this.state.box);
+		const bounding_boxes = boxes.map((obj) => {
+			const box = {
+				topRow: obj.top_row * height,
+				rightCol: width - obj.right_col * width,
+				bottomRow: height - obj.bottom_row * height,
+				leftCol: obj.left_col * width
+			};
+			// console.log(box);
+			return box;
+		});
+		this.setState({ boxes: bounding_boxes });
+		// console.log(bounding_boxes);
+		// console.log(this.state.box);
 	};
 
 	render() {
@@ -74,7 +80,7 @@ class App extends Component {
 				<Logo />
 				<Rank />
 				<ImageLinkForm onInputChange={this.onInputChange} onDetect={this.onDetect} />
-				<FaceDetection box={this.state.box} imageUrl={this.state.imageUrl} />
+				<FaceDetection boxes={this.state.boxes} imageUrl={this.state.imageUrl} />
 			</div>
 		);
 	}
