@@ -4,6 +4,7 @@ html {
 	margin: 0;
 }
 body {
+	overflow-y: hidden;
 	position: fixed;
 	width: 100%;
 	height: 100%;
