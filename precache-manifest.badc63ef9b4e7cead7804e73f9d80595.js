@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "52ac81a4fdf4ca75ebf90e2f6888356a",
+    "revision": "acbf368845fd0e20b752c45c65e5044f",
     "url": "//debpaine.github.io/Face-Recognizer/./index.html"
   },
   {
