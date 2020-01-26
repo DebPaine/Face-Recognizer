@@ -7,6 +7,7 @@ const FaceDetection = ({ boxes, imageUrl }) => {
 		<div className="mt2">
 			<div className="absolute imgcontainer">
 				<img id="inputImage" src={imageUrl} width="400px" height="auto" alt="" />
+
 				{boxes.map((c, i) => <BoundingBox key={i} box={c} />)}
 			</div>
 		</div>

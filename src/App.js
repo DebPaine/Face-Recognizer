@@ -1,38 +1,26 @@
 import React, { Component } from 'react';
-import Navigation from './components/Navigation/Navigation';
-import Logo from './components/Logo/Logo';
-import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
-import Rank from './components/Rank/Rank';
+import Navigation from './Components/Navigation/Navigation';
+import Logo from './Components/Logo/Logo';
+import ImageLinkForm from './Components/ImageLinkForm/ImageLinkForm';
+import Rank from './Components/Rank/Rank';
 import './App.css';
-import Particles from 'react-particles-js';
+import ParticleBackground from './Components/ParticleBackground/ParticleBackground';
 import Clarifai from 'clarifai';
-import FaceDetection from './components/FaceDetection/FaceDetection';
+import FaceDetection from './Components/FaceDetection/FaceDetection';
+import SignIn from './Components/SignIn/SignIn';
+import Register from './Components/Register/Register';
 
 const app = new Clarifai.App({
 	apiKey: '917ae1bc8dd6466699f1f5f13dec6144'
 });
-
-const particleOptions = {
-	particles: {
-		number: {
-			value: 80,
-			density: {
-				enable: true,
-				value_area: 800
-			}
-		},
-		line_linked: {
-			enable_auto: true
-		}
-	}
-};
 
 class App extends Component {
 	constructor() {
 		super();
 		this.state = {
 			imageUrl: '',
-			boxes: []
+			boxes: [],
+			route: 'signin'
 		};
 	}
 
@@ -72,15 +60,27 @@ class App extends Component {
 		// console.log(this.state.box);
 	};
 
+	onRouteChange = (route) => {
+		this.setState({ route: route });
+	};
+
 	render() {
 		return (
 			<div className="App">
-				<Particles className="particles" params={particleOptions} />
-				<Navigation />
+				<ParticleBackground />
 				<Logo />
-				<Rank />
-				<ImageLinkForm onInputChange={this.onInputChange} onDetect={this.onDetect} />
-				<FaceDetection boxes={this.state.boxes} imageUrl={this.state.imageUrl} />
+				{this.state.route === 'home' ? (
+					<div>
+						<Navigation onRouteChange={this.onRouteChange} />
+						<Rank />
+						<ImageLinkForm onInputChange={this.onInputChange} onDetect={this.onDetect} />
+						<FaceDetection boxes={this.state.boxes} imageUrl={this.state.imageUrl} />
+					</div>
+				) : this.state.route === 'signin' ? (
+					<SignIn onRouteChange={this.onRouteChange} />
+				) : (
+					<Register onRouteChange={this.onRouteChange} />
+				)}
 			</div>
 		);
 	}
