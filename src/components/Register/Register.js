@@ -8,7 +8,7 @@ const Register = ({ onRouteChange }) => {
 				<div className="control has-icons-left ">
 					<input className="input font3" type="text" placeholder="Full name" name="fullname" />
 					<span className="icon is-small is-left">
-						<i class="fas fa-user" />
+						<i className="fas fa-user" />
 					</span>
 				</div>
 			</div>
@@ -24,19 +24,30 @@ const Register = ({ onRouteChange }) => {
 				<div className="control has-icons-left ">
 					<input className="input font3" type="password" placeholder="Password" name="password" />
 					<span className="icon is-small is-left">
-						<i class="fas fa-lock" />
+						<i className="fas fa-lock" />
 					</span>
 				</div>
 			</div>
 
 			<div className="field is-grouped is-grouped-centered">
 				<div className="control">
-					<button className="button is-outlined is-link font3 b" onClick={() => onRouteChange('signin')}>
+					<button
+						className="button is-outlined is-link font3 b"
+						name="goback"
+						value="goback"
+						onClick={() => onRouteChange('signin')}
+					>
 						Go back
 					</button>
 				</div>
-				<div class="control">
-					<button className="button is-outlined is-link font3 b" onClick={() => onRouteChange('home')}>
+				<div className="control">
+					<button
+						className="button is-outlined is-link font3 b"
+						type="submit"
+						name="register"
+						value="register"
+						onClick={() => onRouteChange('home')}
+					>
 						Register
 					</button>
 				</div>
