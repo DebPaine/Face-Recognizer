@@ -15,14 +15,33 @@ const app = new Clarifai.App({
 });
 
 class App extends Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 		this.state = {
 			imageUrl: '',
 			boxes: [],
-			route: 'signin'
+			route: 'signin',
+			user: {
+				id: '',
+				name: '',
+				email: '',
+				entries: 0,
+				joined: ''
+			}
 		};
 	}
+
+	loadUser = (data) => {
+		this.setState({
+			user: {
+				id: data.id,
+				name: data.name,
+				email: data.email,
+				entries: data.entries,
+				joined: data.joined
+			}
+		});
+	};
 
 	onInputChange = (e) => {
 		this.setState({ imageUrl: e.target.value });
@@ -41,7 +60,7 @@ class App extends Component {
 	};
 
 	calculateFaceLocation = (boxes) => {
-		console.log(boxes);
+		// console.log(boxes);
 		const image = document.getElementById('inputImage');
 		const width = image.width;
 		const height = image.height;
@@ -72,18 +91,27 @@ class App extends Component {
 				{this.state.route === 'home' ? (
 					<div>
 						<Navigation onRouteChange={this.onRouteChange} />
-						<Rank />
+						<Rank name={this.state.name} entries={this.state.entries} />
 						<ImageLinkForm onInputChange={this.onInputChange} onDetect={this.onDetect} />
 						<FaceDetection boxes={this.state.boxes} imageUrl={this.state.imageUrl} />
 					</div>
 				) : this.state.route === 'signin' ? (
-					<SignIn onRouteChange={this.onRouteChange} />
+					<SignIn loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
 				) : (
-					<Register onRouteChange={this.onRouteChange} />
+					<Register onRouteChange={this.onRouteChange} loadUser={this.loadUser} />
 				)}
 			</div>
 		);
 	}
+
+	// componentDidMount() {
+	// 	async function getApi() {
+	// 		const response = await fetch('http://localhost:3001/');
+	// 		const data = await response.json();
+	// 		console.log(data);
+	// 	}
+	// 	getApi();
+	// }
 }
 
 export default App;
