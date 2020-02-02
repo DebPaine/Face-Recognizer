@@ -1,0 +1,11 @@
+.Tilt {
+	background: linear-gradient(to right, rgb(80, 221, 237), rgb(235, 78, 223));
+}
+
+.logo {
+	position: absolute;
+	top: 20px;
+	right: 500px;
+	bottom: 1000px;
+	left: 20px;
+}
