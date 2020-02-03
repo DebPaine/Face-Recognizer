@@ -51,16 +51,25 @@ class App extends Component {
 		app.models
 			.predict(Clarifai.FACE_DETECT_MODEL, this.state.imageUrl)
 			.then((response) => {
-				// console.log(response);
-				const multipleBoxes = response.outputs[0].data.regions.map((obj) => obj.region_info.bounding_box);
-				// console.log(multipleBoxes);
-				this.calculateFaceLocation(multipleBoxes);
+				if (response) {
+					fetch('http://localhost:3001/image', {
+						method: 'put',
+						headers: { 'Content-type': 'application/json' },
+						body: JSON.stringify({
+							id: this.state.user.id
+						})
+					})
+						.then((res) => res.json())
+						.then((count) => this.setState(Object.assign(this.state.user, { entries: count })));
+
+					const multipleBoxes = response.outputs[0].data.regions.map((obj) => obj.region_info.bounding_box);
+					this.calculateFaceLocation(multipleBoxes);
+				}
 			})
 			.catch((error) => console.log(error));
 	};
 
 	calculateFaceLocation = (boxes) => {
-		// console.log(boxes);
 		const image = document.getElementById('inputImage');
 		const width = image.width;
 		const height = image.height;
@@ -71,12 +80,10 @@ class App extends Component {
 				bottomRow: height - obj.bottom_row * height,
 				leftCol: obj.left_col * width
 			};
-			// console.log(box);
+
 			return box;
 		});
 		this.setState({ boxes: bounding_boxes });
-		// console.log(bounding_boxes);
-		// console.log(this.state.box);
 	};
 
 	onRouteChange = (route) => {
@@ -84,18 +91,20 @@ class App extends Component {
 	};
 
 	render() {
+		const { boxes, imageUrl, route } = this.state;
+		const { name, entries } = this.state.user;
 		return (
 			<div className="App">
 				<ParticleBackground />
 				<Logo />
-				{this.state.route === 'home' ? (
+				{route === 'home' ? (
 					<div>
 						<Navigation onRouteChange={this.onRouteChange} />
-						<Rank name={this.state.name} entries={this.state.entries} />
+						<Rank name={name} entries={entries} />
 						<ImageLinkForm onInputChange={this.onInputChange} onDetect={this.onDetect} />
-						<FaceDetection boxes={this.state.boxes} imageUrl={this.state.imageUrl} />
+						<FaceDetection boxes={boxes} imageUrl={imageUrl} />
 					</div>
-				) : this.state.route === 'signin' ? (
+				) : route === 'signin' ? (
 					<SignIn loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
 				) : (
 					<Register onRouteChange={this.onRouteChange} loadUser={this.loadUser} />
