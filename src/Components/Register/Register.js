@@ -33,7 +33,7 @@ class Register extends Component {
 				password: password
 			})
 		})
-			.then((res) => res.json()) //res is from fetch
+			.then((res) => res.json())
 			.then((user) => {
 				if (user.id) {
 					this.props.loadUser(user);

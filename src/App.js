@@ -60,7 +60,7 @@ class App extends Component {
 						})
 					})
 						.then((res) => res.json())
-						.then((count) => this.setState(Object.assign(this.state.user, { entries: count })));
+						.then((entryCount) => this.setState(Object.assign(this.state.user, { entries: entryCount })));
 
 					const multipleBoxes = response.outputs[0].data.regions.map((obj) => obj.region_info.bounding_box);
 					this.calculateFaceLocation(multipleBoxes);
@@ -112,15 +112,6 @@ class App extends Component {
 			</div>
 		);
 	}
-
-	// componentDidMount() {
-	// 	async function getApi() {
-	// 		const response = await fetch('http://localhost:3001/');
-	// 		const data = await response.json();
-	// 		console.log(data);
-	// 	}
-	// 	getApi();
-	// }
 }
 
 export default App;
