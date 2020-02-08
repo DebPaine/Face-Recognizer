@@ -5,14 +5,9 @@ import ImageLinkForm from '../Components/ImageLinkForm/ImageLinkForm';
 import Rank from '../Components/Rank/Rank';
 import './App.css';
 import ParticleBackground from '../Components/ParticleBackground/ParticleBackground';
-import Clarifai from 'clarifai';
 import FaceDetection from '../Components/FaceDetection/FaceDetection';
 import SignIn from '../Components/SignIn/SignIn';
 import Register from '../Components/Register/Register';
-
-const app = new Clarifai.App({
-	apiKey: '917ae1bc8dd6466699f1f5f13dec6144'
-});
 
 const initialState = {
 	imageUrl: '',
@@ -49,10 +44,21 @@ class App extends Component {
 	};
 
 	onDetect = () => {
-		app.models
-			.predict(Clarifai.FACE_DETECT_MODEL, this.state.imageUrl)
-			.then((response) => {
-				if (response) {
+		fetch('http://localhost:3001/ClarifaiAPI', {
+			method: 'post',
+			headers: { 'Content-type': 'application/json' },
+			body: JSON.stringify({
+				url: this.state.imageUrl
+			})
+		})
+			.then((response) => response.json())
+			.then((boundingRegions) => {
+				if (boundingRegions) {
+					const multipleBoxes = boundingRegions.outputs[0].data.regions.map(
+						(obj) => obj.region_info.bounding_box
+					);
+					this.calculateFaceLocation(multipleBoxes);
+
 					fetch('http://localhost:3001/image', {
 						method: 'put',
 						headers: { 'Content-type': 'application/json' },
@@ -61,13 +67,11 @@ class App extends Component {
 						})
 					})
 						.then((res) => res.json())
-						.then((entryCount) => this.setState(Object.assign(this.state.user, { entries: entryCount })));
-
-					const multipleBoxes = response.outputs[0].data.regions.map((obj) => obj.region_info.bounding_box);
-					this.calculateFaceLocation(multipleBoxes);
+						.then((entryCount) => this.setState(Object.assign(this.state.user, { entries: entryCount })))
+						.catch((err) => console.log('Entry count error'));
 				}
 			})
-			.catch((error) => console.log(error));
+			.catch((err) => console.log('Error in bounding region'));
 	};
 
 	calculateFaceLocation = (boxes) => {
