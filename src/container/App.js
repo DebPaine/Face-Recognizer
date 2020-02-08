@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import Navigation from './Components/Navigation/Navigation';
-import Logo from './Components/Logo/Logo';
-import ImageLinkForm from './Components/ImageLinkForm/ImageLinkForm';
-import Rank from './Components/Rank/Rank';
+import Navigation from '../Components/Navigation/Navigation';
+import Logo from '../Components/Logo/Logo';
+import ImageLinkForm from '../Components/ImageLinkForm/ImageLinkForm';
+import Rank from '../Components/Rank/Rank';
 import './App.css';
-import ParticleBackground from './Components/ParticleBackground/ParticleBackground';
+import ParticleBackground from '../Components/ParticleBackground/ParticleBackground';
 import Clarifai from 'clarifai';
-import FaceDetection from './Components/FaceDetection/FaceDetection';
-import SignIn from './Components/SignIn/SignIn';
-import Register from './Components/Register/Register';
+import FaceDetection from '../Components/FaceDetection/FaceDetection';
+import SignIn from '../Components/SignIn/SignIn';
+import Register from '../Components/Register/Register';
 
 const app = new Clarifai.App({
 	apiKey: '917ae1bc8dd6466699f1f5f13dec6144'
