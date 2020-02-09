@@ -24,7 +24,7 @@ class Register extends Component {
 
 	onRegister = () => {
 		const { name, email, password } = this.state;
-		fetch('http://localhost:3001/register', {
+		fetch('https://enigmatic-lowlands-93539.herokuapp.com/register', {
 			method: 'post',
 			headers: { 'Content-type': 'application/json' },
 			body: JSON.stringify({
