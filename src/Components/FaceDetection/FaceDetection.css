@@ -1,7 +1,4 @@
-.bounding-box {
-	box-shadow: 0 0 0 2px #ef11f7 inset;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	cursor: pointer;
+.imgcontainer {
+	left: 50%;
+	transform: translateX(-50%);
 }
