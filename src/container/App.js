@@ -44,7 +44,7 @@ class App extends Component {
 	};
 
 	onDetect = () => {
-		fetch('https://enigmatic-lowlands-93539.herokuapp.com/ClarifaiAPI', {
+		fetch('https://face-recognizer123.herokuapp.com/ClarifaiAPI', {
 			method: 'post',
 			headers: { 'Content-type': 'application/json' },
 			body: JSON.stringify({
@@ -59,7 +59,7 @@ class App extends Component {
 					);
 					this.calculateFaceLocation(multipleBoxes);
 
-					fetch('https://enigmatic-lowlands-93539.herokuapp.com/image', {
+					fetch('https://face-recognizer123.herokuapp.com/image', {
 						method: 'put',
 						headers: { 'Content-type': 'application/json' },
 						body: JSON.stringify({
