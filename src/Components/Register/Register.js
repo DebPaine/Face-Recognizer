@@ -24,7 +24,7 @@ class Register extends Component {
 
 	onRegister = () => {
 		const { name, email, password } = this.state;
-		fetch(`${process.env.backendURL}/register`, {
+		fetch('https://face-recognizer123-backend.herokuapp.com/register', {
 			method: 'post',
 			headers: { 'Content-type': 'application/json' },
 			body: JSON.stringify({
