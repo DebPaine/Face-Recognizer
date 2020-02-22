@@ -24,7 +24,7 @@ class Register extends Component {
 
 	onRegister = () => {
 		const { name, email, password } = this.state;
-		fetch('https://face-recognizer123-backend.herokuapp.com/register', {
+		fetch('https://face-recognizer1234-backend.herokuapp.com/register', {
 			method: 'post',
 			headers: { 'Content-type': 'application/json' },
 			body: JSON.stringify({
@@ -45,68 +45,68 @@ class Register extends Component {
 	render() {
 		const { onRouteChange } = this.props;
 		return (
-			<div className="field w-30 center shadow-3 pa3 mt6">
-				<p className="f2 font3 b">Register</p>
-				<div className="field">
-					<div className="control has-icons-left ">
+			<div className='field w-30 center shadow-3 pa3 mt6'>
+				<p className='f2 font3 b'>Register</p>
+				<div className='field'>
+					<div className='control has-icons-left '>
 						<input
-							className="input font3"
-							type="text"
-							placeholder="Full name"
-							name="fullname"
+							className='input font3'
+							type='text'
+							placeholder='Full name'
+							name='fullname'
 							onChange={this.onNameChange}
 						/>
-						<span className="icon is-small is-left">
-							<i className="fas fa-user" />
+						<span className='icon is-small is-left'>
+							<i className='fas fa-user' />
 						</span>
 					</div>
 				</div>
-				<div className="field">
-					<div className="control has-icons-left ">
+				<div className='field'>
+					<div className='control has-icons-left '>
 						<input
-							className="input font3"
-							type="email"
-							placeholder="Email"
-							name="email"
+							className='input font3'
+							type='email'
+							placeholder='Email'
+							name='email'
 							onChange={this.onEmailChange}
 						/>
-						<span className="icon is-small is-left">
-							<i className="fas fa-envelope" />
+						<span className='icon is-small is-left'>
+							<i className='fas fa-envelope' />
 						</span>
 					</div>
 				</div>
-				<div className="field">
-					<div className="control has-icons-left ">
+				<div className='field'>
+					<div className='control has-icons-left '>
 						<input
-							className="input font3"
-							type="password"
-							placeholder="Password"
-							name="password"
+							className='input font3'
+							type='password'
+							placeholder='Password'
+							name='password'
 							onChange={this.onPasswordChange}
 						/>
-						<span className="icon is-small is-left">
-							<i className="fas fa-lock" />
+						<span className='icon is-small is-left'>
+							<i className='fas fa-lock' />
 						</span>
 					</div>
 				</div>
 
-				<div className="field is-grouped is-grouped-centered">
-					<div className="control">
+				<div className='field is-grouped is-grouped-centered'>
+					<div className='control'>
 						<button
-							className="button is-outlined is-link font3 b"
-							name="goback"
-							value="goback"
+							className='button is-outlined is-link font3 b'
+							name='goback'
+							value='goback'
 							onClick={() => onRouteChange('signin')}
 						>
 							Go back
 						</button>
 					</div>
-					<div className="control">
+					<div className='control'>
 						<button
-							className="button is-outlined is-link font3 b"
-							type="submit"
-							name="register"
-							value="register"
+							className='button is-outlined is-link font3 b'
+							type='submit'
+							name='register'
+							value='register'
 							onClick={this.onRegister}
 						>
 							Register

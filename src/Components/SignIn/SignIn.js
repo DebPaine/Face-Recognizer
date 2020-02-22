@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 class SignIn extends Component {
-	constructor(props) {
+	constructor (props) {
 		super(props);
 		this.state = {
 			email: '',
@@ -20,8 +20,8 @@ class SignIn extends Component {
 	onSubmit = () => {
 		const { email, password } = this.state;
 		const { onRouteChange, loadUser } = this.props;
-		async function getSignin() {
-			const response = await fetch('https://face-recognizer123-backend.herokuapp.com/signin', {
+		async function getSignin () {
+			const response = await fetch('https://face-recognizer1234-backend.herokuapp.com/signin', {
 				method: 'post',
 				headers: { 'Content-type': 'application/json' },
 				body: JSON.stringify({
@@ -38,47 +38,47 @@ class SignIn extends Component {
 		getSignin();
 	};
 
-	render() {
+	render () {
 		const { onRouteChange } = this.props;
 		return (
-			<div className="field w-30 center shadow-1 pa3 mt6">
-				<p className="f2 font3 b">Sign In</p>
-				<div className="field">
-					<div className="control has-icons-left ">
+			<div className='field w-30 center shadow-1 pa3 mt6'>
+				<p className='f2 font3 b'>Sign In</p>
+				<div className='field'>
+					<div className='control has-icons-left '>
 						<input
-							className="input font3"
-							type="email"
-							placeholder="Email"
-							name="email"
+							className='input font3'
+							type='email'
+							placeholder='Email'
+							name='email'
 							onChange={this.onEmailChange}
 						/>
-						<span className="icon is-small is-left">
-							<i className="fas fa-envelope" />
+						<span className='icon is-small is-left'>
+							<i className='fas fa-envelope' />
 						</span>
 					</div>
 				</div>
-				<div className="field">
-					<div className="control has-icons-left ">
+				<div className='field'>
+					<div className='control has-icons-left '>
 						<input
-							className="input font3"
-							type="password"
-							placeholder="Password"
-							name="password"
+							className='input font3'
+							type='password'
+							placeholder='Password'
+							name='password'
 							onChange={this.onPasswordChange}
 						/>
-						<span className="icon is-small is-left">
-							<i className="fas fa-lock" />
+						<span className='icon is-small is-left'>
+							<i className='fas fa-lock' />
 						</span>
 					</div>
 				</div>
 
-				<div className="field">
-					<div className="center">
+				<div className='field'>
+					<div className='center'>
 						<button
-							className="button is-outlined is-link font3 b"
-							type="submit"
-							name="signin"
-							value="signin"
+							className='button is-outlined is-link font3 b'
+							type='submit'
+							name='signin'
+							value='signin'
 							onClick={this.onSubmit}
 						>
 							Sign In
@@ -86,10 +86,10 @@ class SignIn extends Component {
 					</div>
 				</div>
 				<div>
-					<p className="font3">
+					<p className='font3'>
 						<a onClick={() => onRouteChange('register')}>New user? Register here</a>
 					</p>
-					<p className="help">
+					<p className='help'>
 						<a>Forgot password?</a>
 					</p>
 				</div>

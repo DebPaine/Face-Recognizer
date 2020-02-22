@@ -44,7 +44,7 @@ class App extends Component {
 	};
 
 	onDetect = () => {
-		fetch('https://face-recognizer123-backend.herokuapp.com/ClarifaiAPI', {
+		fetch('https://face-recognizer1234-backend.herokuapp.com/ClarifaiAPI', {
 			method: 'post',
 			headers: { 'Content-type': 'application/json' },
 			body: JSON.stringify({
@@ -59,7 +59,7 @@ class App extends Component {
 					);
 					this.calculateFaceLocation(multipleBoxes);
 
-					fetch('https://face-recognizer123-backend.herokuapp.com/image', {
+					fetch('https://face-recognizer1234-backend.herokuapp.com/image', {
 						method: 'put',
 						headers: { 'Content-type': 'application/json' },
 						body: JSON.stringify({
@@ -103,7 +103,7 @@ class App extends Component {
 		const { boxes, imageUrl, route } = this.state;
 		const { name, entries } = this.state.user;
 		return (
-			<div className="App">
+			<div className='App'>
 				<ParticleBackground />
 				<Logo />
 				{route === 'home' ? (
