@@ -87,7 +87,7 @@ class SignIn extends Component {
 				</div>
 				<div>
 					<p className='font3'>
-						<a href='!#' onClick={() => onRouteChange('register')}>
+						<a href='#!' onClick={() => onRouteChange('register')}>
 							New user? Register here
 						</a>
 					</p>
