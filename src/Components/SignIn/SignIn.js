@@ -21,7 +21,7 @@ class SignIn extends Component {
 		const { email, password } = this.state;
 		const { onRouteChange, loadUser } = this.props;
 		async function getSignin () {
-			const response = await fetch('https://face-recognizer1234-backend.herokuapp.com/signin', {
+			const response = await fetch('/signin', {
 				method: 'post',
 				headers: { 'Content-type': 'application/json' },
 				body: JSON.stringify({
@@ -87,11 +87,11 @@ class SignIn extends Component {
 				</div>
 				<div>
 					<p className='font3'>
-						<a onClick={() => onRouteChange('register')}>New user? Register here</a>
+						<a href='!#' onClick={() => onRouteChange('register')}>
+							New user? Register here
+						</a>
 					</p>
-					<p className='help'>
-						<a>Forgot password?</a>
-					</p>
+					<p className='help'>{/* <a>Forgot password?</a> */}</p>
 				</div>
 			</div>
 		);

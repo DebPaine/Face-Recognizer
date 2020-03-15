@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Quantico:400,700&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=Anton');
+
+@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
 .font1 {
 	font-family: 'Pacifico', cursive;
 }
@@ -9,9 +15,3 @@
 .font3 {
 	font-family: 'Quantico', sans-serif;
 }
-
-@import url('https://fonts.googleapis.com/css?family=Quantico:400,700&display=swap');
-
-@import url('https://fonts.googleapis.com/css?family=Anton');
-
-@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');

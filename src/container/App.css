@@ -1,7 +1,6 @@
 .App {
 	text-align: center;
 }
-
 .particles {
 	position: fixed;
 	top: 0;
@@ -9,4 +8,18 @@
 	bottom: 0;
 	left: 0;
 	z-index: -1;
+}
+.container {
+	max-width: 500px;
+	margin: auto;
+	overflow: hidden;
+	padding: 0 2rem;
+	margin-top: 6rem;
+	margin-bottom: 3rem;
+}
+@media (max-width: 600px) {
+	.container {
+		margin-top: 6rem;
+		max-width: 400px;
+	}
 }

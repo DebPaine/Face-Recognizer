@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 class Register extends Component {
-	constructor(props) {
+	constructor (props) {
 		super(props);
 		this.state = {
 			name: '',
@@ -24,7 +24,7 @@ class Register extends Component {
 
 	onRegister = () => {
 		const { name, email, password } = this.state;
-		fetch('https://face-recognizer1234-backend.herokuapp.com/register', {
+		fetch('/register', {
 			method: 'post',
 			headers: { 'Content-type': 'application/json' },
 			body: JSON.stringify({
@@ -42,7 +42,7 @@ class Register extends Component {
 			});
 	};
 
-	render() {
+	render () {
 		const { onRouteChange } = this.props;
 		return (
 			<div className='field w-30 center shadow-3 pa3 mt6'>

@@ -22,7 +22,7 @@ const initialState = {
 	}
 };
 class App extends Component {
-	constructor(props) {
+	constructor (props) {
 		super(props);
 		this.state = initialState;
 	}
@@ -44,7 +44,7 @@ class App extends Component {
 	};
 
 	onDetect = () => {
-		fetch('https://face-recognizer1234-backend.herokuapp.com/ClarifaiAPI', {
+		fetch('/ClarifaiAPI', {
 			method: 'post',
 			headers: { 'Content-type': 'application/json' },
 			body: JSON.stringify({
@@ -59,7 +59,7 @@ class App extends Component {
 					);
 					this.calculateFaceLocation(multipleBoxes);
 
-					fetch('https://face-recognizer1234-backend.herokuapp.com/image', {
+					fetch('/image', {
 						method: 'put',
 						headers: { 'Content-type': 'application/json' },
 						body: JSON.stringify({
@@ -99,7 +99,7 @@ class App extends Component {
 		}
 	};
 
-	render() {
+	render () {
 		const { boxes, imageUrl, route } = this.state;
 		const { name, entries } = this.state.user;
 		return (
