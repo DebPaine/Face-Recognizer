@@ -26,5 +26,14 @@ app.post('/ClarifaiAPI', (req, res) => image.handleAPIcall(req, res));
 app.post('/register', (req, res) => register.handleRegister(req, res, knex, bcrypt));
 app.post('/signin', signin.handleSignin(knex, bcrypt));
 
+if (process.env.NODE_ENV === 'production') {
+	// Set static folder
+	app.use(express.static('../build'));
+
+	app.get('*', (req, res) => {
+		res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
+	});
+}
+
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => console.log(`Server started on PORT ${PORT}`));
