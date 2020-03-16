@@ -19,13 +19,6 @@ const knex = require('knex')({
 app.use(cors());
 app.use(express.json({ extended: false }));
 
-app.get('/', (req, res) => root.handleRoot(req, res, knex));
-app.get('/profile/:userid', (req, res) => profile.handleProfile(req, res, knex));
-app.put('/image', (req, res) => image.handleImage(req, res, knex));
-app.post('/ClarifaiAPI', (req, res) => image.handleAPIcall(req, res));
-app.post('/register', (req, res) => register.handleRegister(req, res, knex, bcrypt));
-app.post('/signin', signin.handleSignin(knex, bcrypt));
-
 // Serve static assets  in production
 if (process.env.NODE_ENV === 'production') {
 	// Set static folder
@@ -35,6 +28,13 @@ if (process.env.NODE_ENV === 'production') {
 		res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
 	});
 }
+
+app.get('/', (req, res) => root.handleRoot(req, res, knex));
+app.get('/profile/:userid', (req, res) => profile.handleProfile(req, res, knex));
+app.put('/image', (req, res) => image.handleImage(req, res, knex));
+app.post('/ClarifaiAPI', (req, res) => image.handleAPIcall(req, res));
+app.post('/register', (req, res) => register.handleRegister(req, res, knex, bcrypt));
+app.post('/signin', signin.handleSignin(knex, bcrypt));
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => console.log(`Server started on PORT ${PORT}`));
