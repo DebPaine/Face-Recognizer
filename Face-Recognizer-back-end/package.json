@@ -9,15 +9,15 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/DebPaine/Face-Recognizer-back-end.git"
+		"url": "git+https://github.com/DebPaine/Face-Recognizer.git"
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
 	"bugs": {
-		"url": "https://github.com/DebPaine/Face-Recognizer-back-end/issues"
+		"url": "https://github.com/DebPaine/Face-Recognizer/issues"
 	},
-	"homepage": "https://github.com/DebPaine/Face-Recognizer-back-end#readme",
+	"homepage": "https://github.com/DebPaine/Face-Recognizer#readme",
 	"dependencies": {
 		"bcrypt-nodejs": "0.0.3",
 		"clarifai": "^2.9.1",
