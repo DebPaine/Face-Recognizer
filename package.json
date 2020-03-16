@@ -38,5 +38,6 @@
 	},
 	"devDependencies": {
 		"nodemon": "^2.0.2"
-	}
+	},
+	"proxy": "https://face-recognizer1234.herokuapp.com/"
 }
