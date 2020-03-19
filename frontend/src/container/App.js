@@ -105,7 +105,7 @@ class App extends Component {
 		return (
 			<div className='App'>
 				<ParticleBackground />
-				<Logo />
+				{/* <Logo /> */}
 				{route === 'home' ? (
 					<div>
 						<Navigation onRouteChange={this.onRouteChange} />
