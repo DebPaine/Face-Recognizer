@@ -4,7 +4,7 @@ import './BoundingBox.css';
 const BoundingBox = ({ box }) => {
 	return (
 		<div
-			className='bounding-box'
+			className='absolute bounding-box'
 			style={{ top: box.topRow, right: box.rightCol, bottom: box.bottomRow, left: box.leftCol }}
 		/>
 	);
