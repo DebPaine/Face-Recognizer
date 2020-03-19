@@ -109,11 +109,9 @@ class App extends Component {
 				{route === 'home' ? (
 					<div>
 						<Navigation onRouteChange={this.onRouteChange} />
-						<div className='center'>
-							<Rank name={name} entries={entries} />
-							<ImageLinkForm onInputChange={this.onInputChange} onDetect={this.onDetect} />
-							<FaceDetection boxes={boxes} imageUrl={imageUrl} />
-						</div>
+						<Rank name={name} entries={entries} />
+						<ImageLinkForm onInputChange={this.onInputChange} onDetect={this.onDetect} />
+						<FaceDetection boxes={boxes} imageUrl={imageUrl} />
 					</div>
 				) : route === 'signin' ? (
 					<SignIn loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
