@@ -45,7 +45,7 @@ class Register extends Component {
 	render () {
 		const { onRouteChange } = this.props;
 		return (
-			<div className='field w-30 center shadow-3 pa3 mt6'>
+			<div className='width field w-30 center shadow-3 pa3 mt6'>
 				<p className='f2 font3 b'>Register</p>
 				<div className='field'>
 					<div className='control has-icons-left '>
