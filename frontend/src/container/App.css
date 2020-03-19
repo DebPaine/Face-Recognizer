@@ -10,9 +10,17 @@
 	z-index: -1;
 }
 .width {
-	width: 50%;
+	width: 60%;
 }
-
+.height {
+	height: 60%;
+}
+.fontsize3vh {
+	font-size: 3vh;
+}
+.fontsize4vh {
+	font-size: 4vh;
+}
 @media (max-width: 600px) {
 	.width {
 		width: 90%;

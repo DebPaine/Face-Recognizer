@@ -3,8 +3,8 @@ import './ImageLinkForm.css';
 
 const ImageLinkForm = ({ onInputChange, onDetect }) => {
 	return (
-		<div className='width font'>
-			<p className='f2 mb3 black font1'>This is a Face Recognition App</p>
+		<div className='center width font'>
+			<p className='fontsize4vh mb3 black font1'>This is a Face Recognition App</p>
 			<div className='flex center shadow-1 pa4 pr3 pl3 br2'>
 				<input
 					type='text'

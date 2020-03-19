@@ -4,7 +4,7 @@ import BoundingBox from '../BoundingBox/BoundingBox';
 
 const FaceDetection = ({ boxes, imageUrl }) => {
 	return (
-		<div className='width mt2'>
+		<div className='center width mt2'>
 			<div className='absolute'>
 				<img id='inputImage' className='width height' src={imageUrl} alt='' />
 
