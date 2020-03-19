@@ -6,7 +6,7 @@ const FaceDetection = ({ boxes, imageUrl }) => {
 	return (
 		<div className='width mt2'>
 			<div className='absolute'>
-				<img id='inputImage' src={imageUrl} width='500px' height='auto' alt='' />
+				<img id='inputImage' className='width height' src={imageUrl} alt='' />
 
 				{boxes.map((c, i) => <BoundingBox key={i} box={c} />)}
 			</div>
