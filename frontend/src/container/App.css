@@ -21,18 +21,24 @@
 .fontsize4vh {
 	font-size: 4vh;
 }
+.authwidth {
+	width: 40%;
+}
 @media (max-width: 600px) {
-	.width {
+	.width,
+	.authwidth {
 		width: 90%;
 	}
 }
 @media (max-width: 800px) {
-	.width {
+	.width,
+	.authwidth {
 		width: 80%;
 	}
 }
 @media (max-width: 1050px) {
-	.width {
+	.width,
+	.authwidth {
 		width: 80%;
 	}
 }
