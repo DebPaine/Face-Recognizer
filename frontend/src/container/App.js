@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import Navigation from '../Components/Navigation/Navigation';
 import Logo from '../Components/Logo/Logo';
 import ImageLinkForm from '../Components/ImageLinkForm/ImageLinkForm';
@@ -109,14 +109,21 @@ class App extends Component {
 				{route === 'home' ? (
 					<div>
 						<Navigation onRouteChange={this.onRouteChange} />
+						<p className='fontsize6vh mb3 black font1'>Face Recognizer</p>
 						<Rank name={name} entries={entries} />
 						<ImageLinkForm onInputChange={this.onInputChange} onDetect={this.onDetect} />
 						<FaceDetection boxes={boxes} imageUrl={imageUrl} />
 					</div>
 				) : route === 'signin' ? (
-					<SignIn loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
+					<Fragment>
+						<p className='fontsize6vh mb3 black font1'>Face Recognizer</p>
+						<SignIn loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
+					</Fragment>
 				) : (
-					<Register onRouteChange={this.onRouteChange} loadUser={this.loadUser} />
+					<Fragment>
+						<p className='fontsize6vh mb3 black font1'>Face Recognizer</p>
+						<Register onRouteChange={this.onRouteChange} loadUser={this.loadUser} />
+					</Fragment>
 				)}
 			</div>
 		);
