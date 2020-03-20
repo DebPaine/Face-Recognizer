@@ -76,8 +76,8 @@ class App extends Component {
 
 	calculateFaceLocation = (boxes) => {
 		const image = document.getElementById('inputImage');
-		const width = image.width;
-		const height = image.height;
+		const width = image.offsetWidth;
+		const height = image.offsetHeight;
 		const bounding_boxes = boxes.map((obj) => {
 			const box = {
 				topRow: obj.top_row * height,
