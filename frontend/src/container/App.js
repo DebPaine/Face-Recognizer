@@ -109,19 +109,19 @@ class App extends Component {
 				{route === 'home' ? (
 					<div>
 						<Navigation onRouteChange={this.onRouteChange} />
-						<p className='fontsize6vh mb3 black font1'>Face Recognizer</p>
+						<p className='fontsize6vh mt3 mb3 black font1'>Face Recognizer</p>
 						<Rank name={name} entries={entries} />
 						<ImageLinkForm onInputChange={this.onInputChange} onDetect={this.onDetect} />
 						<FaceDetection boxes={boxes} imageUrl={imageUrl} />
 					</div>
 				) : route === 'signin' ? (
 					<Fragment>
-						<p className='fontsize6vh mb3 black font1'>Face Recognizer</p>
+						<p className='fontsize6vh mt3 mb3 black font1'>Face Recognizer</p>
 						<SignIn loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
 					</Fragment>
 				) : (
 					<Fragment>
-						<p className='fontsize6vh mb3 black font1'>Face Recognizer</p>
+						<p className='fontsize6vh mt3 mb3 black font1'>Face Recognizer</p>
 						<Register onRouteChange={this.onRouteChange} loadUser={this.loadUser} />
 					</Fragment>
 				)}
